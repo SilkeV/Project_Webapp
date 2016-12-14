@@ -1,0 +1,39 @@
+<html>
+
+<head>
+    <title>Chirp</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular-route.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular-resource.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/danialfarid-angular-file-upload/12.2.13/ng-file-upload-all.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-aria.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-messages.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.js"></script>
+    <script src="javascripts/chirpApp.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="stylesheets/style.css">
+</head>
+
+<body ng-app="chirpApp">
+    <div id='main' class="container">
+        <nav class="navbar-fluid navbar-default navbar-fixed-top">
+            <div class="container">
+                <a class="navbar-brand" href="#/">
+                    <image class="brand" src="../images/chirp.png" />
+                </a>
+                <p class="navbar-text">A tiny chirp app!</p>
+                <p class="navbar-right navbar-text" ng-hide="authenticated"><a href="#/login">Login</a> or <a href="#/register">Register</a></p>
+                <p class="navbar-right navbar-text" ng-show="authenticated"><a href="#" ng-click="signout()">Logout</a></p>
+                <p class="navbar-right navbar-text" ng-show="authenticated">Signed in as {{current_user}}</p>
+            </div>
+        </nav>
+        <div class="col-md-offset-2 col-md-8">
+            <div ng-view>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
